@@ -746,13 +746,18 @@ def apply_custom_theme():
         .fc,
         .stCalendar {
             background-color: #FFFFFF !important;
+            border-radius: 20px !important;
+            overflow: hidden !important;
         }
 
         /* 둥근 모서리 외부 영역에서 잔상 비침 방지 */
+        div[data-testid="stHtml"] iframe,
+        .stCustomComponentV1,
         .st-key-calendar_card,
         .st-key-calendar_card [data-testid="stElementContainer"],
         .st-key-calendar_card [data-testid="stElementContainer"] > div,
-        .st-key-calendar_card .calendar-host {
+        .st-key-calendar_card .calendar-host,
+        .st-key-calendar_card iframe {
             overflow: hidden !important;
             background-color: #FFFFFF !important;
         }
