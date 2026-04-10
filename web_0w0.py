@@ -762,6 +762,29 @@ def apply_custom_theme():
             background-color: #FFFFFF !important;
         }
 
+        /* 캘린더 외부 iframe/커스텀 컨테이너 배경을 앱 배경색으로 통일 */
+        [data-testid="stCustomComponentV1"],
+        [data-testid="stHtml"],
+        iframe {
+            background-color: #F3E5F5 !important;
+            background: #F3E5F5 !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        /* 캘린더 주변 미세 여백 제거 */
+        .st-key-calendar_card,
+        .st-key-calendar_card [data-testid="stElementContainer"],
+        .st-key-calendar_card [data-testid="stElementContainer"] > div,
+        .st-key-calendar_card .calendar-host,
+        .st-key-calendar_card iframe,
+        .stCustomComponentV1,
+        [data-testid="stCustomComponentV1"] {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
         /* 입력 컴포넌트 간 물리적 간격만 유지 */
         [data-testid="stTextInput"] {
             margin-bottom: 0.35rem !important;
@@ -776,6 +799,24 @@ def apply_custom_theme():
             outline: none !important;
         }
         </style>
+        """,
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        """
+        <script>
+        (function () {
+            const existing = document.querySelector('meta[name="color-scheme"]');
+            if (!existing) {
+                const meta = document.createElement("meta");
+                meta.name = "color-scheme";
+                meta.content = "light";
+                document.head.appendChild(meta);
+            } else {
+                existing.setAttribute("content", "light");
+            }
+        })();
+        </script>
         """,
         unsafe_allow_html=True,
     )
