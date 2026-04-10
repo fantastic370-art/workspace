@@ -731,60 +731,6 @@ def apply_custom_theme():
             margin-left: 0 !important;
         }
 
-        /* 캘린더 검은 잔상 제거: 컨테이너/iframe 배경 강제 */
-        div[data-testid="stHtml"] iframe,
-        .stCustomComponentV1,
-        .st-key-calendar_card,
-        .st-key-calendar_card [data-testid="stElementContainer"],
-        .st-key-calendar_card [data-testid="stElementContainer"] > div,
-        .st-key-calendar_card iframe {
-            background-color: #FFFFFF !important;
-            border-radius: 15px !important;
-        }
-
-        /* 캘린더 루트 자체에 배경 직접 주입 */
-        .fc,
-        .stCalendar {
-            background-color: #FFFFFF !important;
-            border-radius: 20px !important;
-            overflow: hidden !important;
-        }
-
-        /* 둥근 모서리 외부 영역에서 잔상 비침 방지 */
-        div[data-testid="stHtml"] iframe,
-        .stCustomComponentV1,
-        .st-key-calendar_card,
-        .st-key-calendar_card [data-testid="stElementContainer"],
-        .st-key-calendar_card [data-testid="stElementContainer"] > div,
-        .st-key-calendar_card .calendar-host,
-        .st-key-calendar_card iframe {
-            overflow: hidden !important;
-            background-color: #FFFFFF !important;
-        }
-
-        /* 캘린더 외부 iframe/커스텀 컨테이너 배경을 앱 배경색으로 통일 */
-        [data-testid="stCustomComponentV1"],
-        [data-testid="stHtml"],
-        iframe {
-            background-color: #F3E5F5 !important;
-            background: #F3E5F5 !important;
-            border: none !important;
-            outline: none !important;
-            box-shadow: none !important;
-        }
-
-        /* 캘린더 주변 미세 여백 제거 */
-        .st-key-calendar_card,
-        .st-key-calendar_card [data-testid="stElementContainer"],
-        .st-key-calendar_card [data-testid="stElementContainer"] > div,
-        .st-key-calendar_card .calendar-host,
-        .st-key-calendar_card iframe,
-        .stCustomComponentV1,
-        [data-testid="stCustomComponentV1"] {
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
         /* 입력 컴포넌트 간 물리적 간격만 유지 */
         [data-testid="stTextInput"] {
             margin-bottom: 0.35rem !important;
@@ -799,24 +745,6 @@ def apply_custom_theme():
             outline: none !important;
         }
         </style>
-        """,
-        unsafe_allow_html=True,
-    )
-    st.markdown(
-        """
-        <script>
-        (function () {
-            const existing = document.querySelector('meta[name="color-scheme"]');
-            if (!existing) {
-                const meta = document.createElement("meta");
-                meta.name = "color-scheme";
-                meta.content = "light";
-                document.head.appendChild(meta);
-            } else {
-                existing.setAttribute("content", "light");
-            }
-        })();
-        </script>
         """,
         unsafe_allow_html=True,
     )
@@ -903,7 +831,11 @@ def render_calendar(data):
             }
             custom_css = """
             html, body {
-                background: transparent !important;
+                background: #FFFFFF !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border-radius: 20px !important;
+                overflow: hidden !important;
             }
             .fc-view-harness,
             .fc-scrollgrid,
@@ -923,6 +855,7 @@ def render_calendar(data):
                 background: #FFFFFF;
                 padding: 4px;
                 box-shadow: none !important;
+                overflow: hidden !important;
             }
             .fc .fc-toolbar-title {
                 color: #2D004D !important;
