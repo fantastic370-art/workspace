@@ -373,6 +373,14 @@ def apply_custom_theme():
             --pink-accent: #E96ACB;
         }
 
+        /* 브라우저/OS 다크모드와 무관하게 항상 밝은 테마 유지 */
+        html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {
+            color-scheme: light !important;
+        }
+        :root, :root * {
+            color-scheme: light !important;
+        }
+
         html, body, div, [class*="css"], [data-testid="stAppViewContainer"], [data-testid="stApp"] {
             font-family: "Noto Sans KR", sans-serif !important;
             color: var(--text-main) !important;
@@ -552,6 +560,118 @@ def apply_custom_theme():
             -webkit-text-fill-color: #2D004D !important;
             background: #FFFFFF !important;
             padding: 0.5rem 0.7rem !important;
+        }
+
+        /* 배포 환경에서 Selectbox/Input 내부가 검게 보이는 문제 강제 해결 */
+        [data-testid="stTextInput"] input,
+        [data-testid="stTextArea"] textarea,
+        [data-testid="stNumberInput"] input,
+        [data-testid="stDateInput"] input,
+        [data-testid="stTimeInput"] input,
+        [data-testid="stSelectbox"] [data-baseweb="select"] > div,
+        [data-testid="stMultiSelect"] [data-baseweb="select"] > div,
+        [data-testid="stSelectbox"] [data-baseweb="select"] span,
+        [data-testid="stMultiSelect"] [data-baseweb="select"] span,
+        [data-baseweb="select"] > div,
+        [data-baseweb="select"] input,
+        [data-baseweb="input"] > div,
+        [data-baseweb="input"] input {
+            background-color: #FFFFFF !important;
+            color: #2D004D !important;
+            -webkit-text-fill-color: #2D004D !important;
+            caret-color: #2D004D !important;
+            opacity: 1 !important;
+        }
+
+        [data-testid="stSelectbox"] svg,
+        [data-testid="stMultiSelect"] svg {
+            fill: #2D004D !important;
+            color: #2D004D !important;
+        }
+
+        /* Checkbox 강제 스타일 */
+        div[data-testid="stCheckbox"] > label > span:first-child {
+            background-color: #FFFFFF !important;
+            border: 1px solid #A020F0 !important;
+        }
+
+        /* Selectbox/Date/Input 내부 모든 레이어 강제 라이트 */
+        [data-baseweb="select"] > div,
+        [data-baseweb="input"] > div {
+            background-color: #FFFFFF !important;
+            background: #FFFFFF !important;
+        }
+        input[role="combobox"],
+        input[type="text"] {
+            background-color: #FFFFFF !important;
+            background: #FFFFFF !important;
+            color: #2D004D !important;
+            -webkit-text-fill-color: #2D004D !important;
+        }
+        [data-baseweb="select"] *,
+        [data-baseweb="input"] *,
+        [data-testid="stDateInput"] *,
+        [data-testid="stSelectbox"] *,
+        [data-testid="stMultiSelect"] * {
+            background-color: #FFFFFF !important;
+            color: #2D004D !important;
+            -webkit-text-fill-color: #2D004D !important;
+            opacity: 1 !important;
+        }
+
+        /* WebKit 기본 강제 다크 스타일 무시 */
+        input,
+        textarea,
+        select,
+        [data-baseweb="input"] input,
+        [data-baseweb="select"] input {
+            -webkit-appearance: none !important;
+            appearance: none !important;
+        }
+
+        /* transparent 잔여값 강제 제거 */
+        [data-testid="stDateInput"] [data-baseweb="input"] > div,
+        [data-testid="stSelectbox"] [data-baseweb="select"] > div,
+        [data-testid="stMultiSelect"] [data-baseweb="select"] > div,
+        [data-testid="stTextInput"] [data-baseweb="input"] > div,
+        [data-testid="stNumberInput"] [data-baseweb="input"] > div {
+            background: #FFFFFF !important;
+            background-color: #FFFFFF !important;
+        }
+
+        [data-baseweb="popover"] *,
+        [role="listbox"] *,
+        [role="option"] * {
+            background-color: #FFFFFF !important;
+            color: #2D004D !important;
+            -webkit-text-fill-color: #2D004D !important;
+        }
+
+        /* 시스템 다크모드가 켜져 있어도 입력 위젯은 무조건 라이트 */
+        @media (prefers-color-scheme: dark) {
+            [data-testid="stTextInput"] input,
+            [data-testid="stTextArea"] textarea,
+            [data-testid="stNumberInput"] input,
+            [data-testid="stDateInput"] input,
+            [data-testid="stTimeInput"] input,
+            [data-testid="stSelectbox"] [data-baseweb="select"] > div,
+            [data-testid="stMultiSelect"] [data-baseweb="select"] > div,
+            [data-testid="stSelectbox"] [data-baseweb="select"] span,
+            [data-testid="stMultiSelect"] [data-baseweb="select"] span,
+            [data-baseweb="select"] > div,
+            [data-baseweb="select"] input,
+            [data-baseweb="input"] > div,
+            [data-baseweb="input"] input,
+            [data-baseweb="popover"] *,
+            [role="listbox"] *,
+            [role="option"] * {
+                background: #FFFFFF !important;
+                background-color: #FFFFFF !important;
+                color: #2D004D !important;
+                -webkit-text-fill-color: #2D004D !important;
+                opacity: 1 !important;
+                text-shadow: none !important;
+            }
         }
 
         [data-testid="stForm"] label,
