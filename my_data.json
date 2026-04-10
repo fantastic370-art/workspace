@@ -1,0 +1,101 @@
+{
+  "projects": [
+    {
+      "name": "븍듹즤님 미저씨",
+      "deadline": "2026-04-17",
+      "start_date": "2026-04-10",
+      "created": "2026-04-08",
+      "category": "커미션",
+      "steps_names": [
+        "러프",
+        "선화",
+        "채색",
+        "보정",
+        "완성"
+      ],
+      "steps": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "completed": false
+    },
+    {
+      "name": "핍 케이건드라카",
+      "deadline": "2026-04-18",
+      "start_date": "2026-04-10",
+      "created": "2026-04-08",
+      "category": "커미션",
+      "steps_names": [
+        "러프",
+        "선화",
+        "채색",
+        "보정",
+        "완성"
+      ],
+      "steps": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "completed": false
+    },
+    {
+      "name": "시비님 미저씨",
+      "deadline": "2026-04-23",
+      "start_date": "2026-04-10",
+      "created": "2026-04-09",
+      "category": "커미션",
+      "steps_names": [
+        "러프",
+        "선화",
+        "채색",
+        "보정",
+        "완성"
+      ],
+      "steps": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "completed": false
+    },
+    {
+      "name": "마이너 타로 카드",
+      "deadline": "2026-12-18",
+      "start_date": "2026-04-10",
+      "created": "2026-04-10",
+      "category": "외주",
+      "steps_names": [
+        "러프",
+        "선화",
+        "채색",
+        "보정",
+        "완성"
+      ],
+      "steps": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "remaining_qty": 56,
+      "total_qty": 56,
+      "completed": false
+    }
+  ],
+  "daily_work": {},
+  "theme": "라벤더",
+  "username": "작가님",
+  "todos": [
+    "타로카드 프리셋 캔버스 만들기"
+  ],
+  "daily_goal": 0
+}
