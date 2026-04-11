@@ -608,16 +608,6 @@ def apply_custom_theme():
             color: #2D004D !important;
             -webkit-text-fill-color: #2D004D !important;
         }
-        [data-baseweb="select"] *,
-        [data-baseweb="input"] *,
-        [data-testid="stDateInput"] *,
-        [data-testid="stSelectbox"] *,
-        [data-testid="stMultiSelect"] * {
-            background-color: #FFFFFF !important;
-            color: #2D004D !important;
-            -webkit-text-fill-color: #2D004D !important;
-            opacity: 1 !important;
-        }
 
         /* WebKit 기본 강제 다크 스타일 무시 */
         input,
@@ -637,6 +627,23 @@ def apply_custom_theme():
         [data-testid="stNumberInput"] [data-baseweb="input"] > div {
             background: #FFFFFF !important;
             background-color: #FFFFFF !important;
+        }
+
+        /* 라벨·세로 간격 래퍼에 와일드카드로 칠해지던 흰 띠 제거 */
+        [data-testid="stSelectbox"] > div,
+        [data-testid="stMultiSelect"] > div,
+        [data-testid="stDateInput"] > div {
+            background-color: transparent !important;
+            background: transparent !important;
+        }
+        [data-testid="stSelectbox"] [data-testid="stWidgetLabel"],
+        [data-testid="stSelectbox"] [data-testid="stWidgetLabel"] *,
+        [data-testid="stMultiSelect"] [data-testid="stWidgetLabel"],
+        [data-testid="stMultiSelect"] [data-testid="stWidgetLabel"] *,
+        [data-testid="stDateInput"] [data-testid="stWidgetLabel"],
+        [data-testid="stDateInput"] [data-testid="stWidgetLabel"] * {
+            background-color: transparent !important;
+            background: transparent !important;
         }
 
         [data-baseweb="popover"] *,
