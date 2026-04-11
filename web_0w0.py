@@ -672,6 +672,55 @@ def apply_custom_theme():
                 opacity: 1 !important;
                 text-shadow: none !important;
             }
+
+            /* 팝업(Dialog) 내부도 라이트 모드 고정 */
+            div[role="dialog"] {
+                background-color: #F3E5F5 !important;
+                color: #2D004D !important;
+            }
+            div[role="dialog"] input,
+            div[role="dialog"] textarea,
+            div[role="dialog"] div[data-baseweb="input"],
+            div[role="dialog"] div[data-baseweb="input"] > div,
+            div[role="dialog"] div[data-baseweb="select"] > div {
+                background-color: #FFFFFF !important;
+                color: #2D004D !important;
+                -webkit-text-fill-color: #2D004D !important;
+            }
+            div[role="dialog"] label,
+            div[role="dialog"] [data-testid="stWidgetLabel"],
+            div[role="dialog"] [data-testid="stWidgetLabel"] p,
+            div[role="dialog"] [data-testid="stWidgetLabel"] span {
+                color: #2D004D !important;
+            }
+        }
+
+        /* 팝업(Dialog/Modal) 전체 배경·글자색 고정 */
+        div[role="dialog"] {
+            background-color: #F3E5F5 !important;
+            color: #2D004D !important;
+        }
+
+        /* 팝업 내 입력·Base Web 컨트롤 배경 흰색 */
+        div[role="dialog"] input,
+        div[role="dialog"] textarea,
+        div[role="dialog"] div[data-baseweb="input"],
+        div[role="dialog"] div[data-baseweb="input"] > div,
+        div[role="dialog"] div[data-baseweb="select"] > div {
+            background-color: #FFFFFF !important;
+            color: #2D004D !important;
+            -webkit-text-fill-color: #2D004D !important;
+        }
+
+        /* 제목·마감일·카테고리 등 위젯 라벨 색상 */
+        div[role="dialog"] label,
+        div[role="dialog"] [data-testid="stWidgetLabel"],
+        div[role="dialog"] [data-testid="stWidgetLabel"] p,
+        div[role="dialog"] [data-testid="stWidgetLabel"] span,
+        div[role="dialog"] [data-testid="stMarkdownContainer"] p,
+        div[role="dialog"] [data-testid="stMarkdownContainer"] span,
+        div[role="dialog"] [data-testid="stMarkdownContainer"] strong {
+            color: #2D004D !important;
         }
 
         [data-testid="stForm"] label,
