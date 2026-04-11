@@ -654,15 +654,25 @@ def apply_custom_theme():
             -webkit-text-fill-color: #2D004D !important;
         }
 
-        /* 날짜 선택기 팝업 전체·그리드 (빈 칸 다크 배경 비침 방지) */
-        div[data-baseweb="datepicker"],
-        div[data-baseweb="calendar"] {
-            background-color: #FFFFFF !important;
-            background: #FFFFFF !important;
+        /* 날짜 선택기(Date Picker) 전역 강제 — 깊은 레이어·빈 gridcell·헤더 다크 노출 방지 */
+        [data-baseweb="datepicker"],
+        [data-baseweb="calendar"],
+        [data-baseweb="calendar"] *,
+        div[role="gridcell"] {
+            background-color: white !important;
+            background: white !important;
+            color: #2D004D !important;
+            -webkit-text-fill-color: #2D004D !important;
         }
-        div[data-baseweb="calendar"] div {
-            background-color: #FFFFFF !important;
-            background: #FFFFFF !important;
+        div[role="gridcell"] > div {
+            background-color: white !important;
+            background: white !important;
+        }
+        [data-baseweb="calendar"] header,
+        [data-baseweb="calendar"] header button {
+            background-color: white !important;
+            background: white !important;
+            color: #2D004D !important;
         }
 
         /* 시스템 다크모드가 켜져 있어도 입력 위젯은 무조건 라이트 */
@@ -691,11 +701,24 @@ def apply_custom_theme():
                 text-shadow: none !important;
             }
 
-            div[data-baseweb="datepicker"],
-            div[data-baseweb="calendar"],
-            div[data-baseweb="calendar"] div {
-                background: #FFFFFF !important;
-                background-color: #FFFFFF !important;
+            [data-baseweb="datepicker"],
+            [data-baseweb="calendar"],
+            [data-baseweb="calendar"] *,
+            div[role="gridcell"] {
+                background-color: white !important;
+                background: white !important;
+                color: #2D004D !important;
+                -webkit-text-fill-color: #2D004D !important;
+            }
+            div[role="gridcell"] > div {
+                background-color: white !important;
+                background: white !important;
+            }
+            [data-baseweb="calendar"] header,
+            [data-baseweb="calendar"] header button {
+                background-color: white !important;
+                background: white !important;
+                color: #2D004D !important;
             }
 
             /* 팝업(Dialog) 내부도 라이트 모드 고정 */
