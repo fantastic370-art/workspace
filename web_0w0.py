@@ -654,6 +654,17 @@ def apply_custom_theme():
             -webkit-text-fill-color: #2D004D !important;
         }
 
+        /* 날짜 선택기 팝업 전체·그리드 (빈 칸 다크 배경 비침 방지) */
+        div[data-baseweb="datepicker"],
+        div[data-baseweb="calendar"] {
+            background-color: #FFFFFF !important;
+            background: #FFFFFF !important;
+        }
+        div[data-baseweb="calendar"] div {
+            background-color: #FFFFFF !important;
+            background: #FFFFFF !important;
+        }
+
         /* 시스템 다크모드가 켜져 있어도 입력 위젯은 무조건 라이트 */
         @media (prefers-color-scheme: dark) {
             [data-testid="stTextInput"] input,
@@ -678,6 +689,13 @@ def apply_custom_theme():
                 -webkit-text-fill-color: #2D004D !important;
                 opacity: 1 !important;
                 text-shadow: none !important;
+            }
+
+            div[data-baseweb="datepicker"],
+            div[data-baseweb="calendar"],
+            div[data-baseweb="calendar"] div {
+                background: #FFFFFF !important;
+                background-color: #FFFFFF !important;
             }
 
             /* 팝업(Dialog) 내부도 라이트 모드 고정 */
